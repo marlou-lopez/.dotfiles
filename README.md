@@ -11,6 +11,7 @@
   - [L3MON4D3/LuaSnip](https://github.com/L3MON4D3/LuaSnip) - Snippet
   - [nvim-treesitter/nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) - Syntax parser
   - [iamcco/markdown-preview.nvim](https://github.com/iamcco/markdown-preview.nvim) - Markdow preview
-
+  - [tpope/vim-commentary](https://github.com/tpope/vim-commentary) - Comment
+  - [JoosepAlviste/nvim-ts-context-commentstring](https://github.com/JoosepAlviste/nvim-ts-context-commentstring) - enhance comment
 ## zshrc
   - mainly using default config from [ohmyzsh](https://github.com/ohmyzsh/ohmyzsh).
