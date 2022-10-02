@@ -8,5 +8,5 @@ require('nvim-tree').setup({
 })
 
 nnoremap("<leader>fe", function()
-  require('nvim-tree').toggle(false, true)
+  require('nvim-tree').toggle()
 end)

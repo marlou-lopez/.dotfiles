@@ -18,7 +18,7 @@ telescope.setup {
 }
 
 nnoremap("<Leader>ff", function()
-    require('telescope.builtin').find_files(require('telescope.themes').get_dropdown({}))
+    require('telescope.builtin').find_files()
 end)
 
 nnoremap("<Leader>fb", function()

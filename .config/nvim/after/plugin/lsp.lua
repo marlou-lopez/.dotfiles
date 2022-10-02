@@ -10,6 +10,9 @@ nnoremap("[d", vim.diagnostic.goto_prev, opts)
 nnoremap("]d", vim.diagnostic.goto_next, opts)
 
 local on_attach = function(client, bufnr)
+  if client.name == "tsserver" then
+    client.resolved_capabilities.document_formatting = false
+  end
 
   local bufopts = { silent=true, buffer=bufnr } 
   nnoremap("gd", "<cmd>Telescope lsp_definitions<cr>", bufopts) 
@@ -17,9 +20,11 @@ local on_attach = function(client, bufnr)
   nnoremap("gr", "<cmd>Telescope lsp_references<cr>", bufopts) 
   nnoremap("ld", "<cmd>Telescope diagnostics<cr>", bufopts) 
   nnoremap("K", vim.lsp.buf.hover, bufopts)
+  nnoremap("<leader>F", vim.lsp.buf.formatting_sync, bufopts)
 
   nnoremap("<leader>rn", vim.lsp.buf.rename, bufopts)
   nnoremap("<leader>ca", vim.lsp.buf.code_action, bufopts)
+
 end
 
 require'lspconfig'.tsserver.setup{
