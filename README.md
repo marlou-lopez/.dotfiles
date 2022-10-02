@@ -13,5 +13,7 @@
   - [iamcco/markdown-preview.nvim](https://github.com/iamcco/markdown-preview.nvim) - Markdow preview
   - [tpope/vim-commentary](https://github.com/tpope/vim-commentary) - Comment
   - [JoosepAlviste/nvim-ts-context-commentstring](https://github.com/JoosepAlviste/nvim-ts-context-commentstring) - enhance comment
+  - [jose-elias-alvarez/null-ls.nvim](https://github.com/jose-elias-alvarez/null-ls.nvim) - Format and diagnostics
+  
 ## zshrc
   - mainly using default config from [ohmyzsh](https://github.com/ohmyzsh/ohmyzsh).
