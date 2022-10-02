@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =7
+let g:netrw_dirhist_7='/home/marloulou/.config/nvim'
+let g:netrw_dirhist_6='/home/marloulou/.config'
+let g:netrw_dirhist_5='/home/marloulou'
+let g:netrw_dirhist_4='/home/marloulou/Projects/mama-record-keeping/components'
+let g:netrw_dirhist_3='/home/marloulou/Projects/mama-record-keeping'
+let g:netrw_dirhist_2='/home/marloulou/Projects'
+let g:netrw_dirhist_1='/home/marloulou'
+let g:netrw_dirhist_0='/home/marloulou/Practice/typescript'
+let g:netrw_dirhist_9='/home/marloulou/.config/nvim'
+let g:netrw_dirhist_8='/home/marloulou/.config'
