@@ -17,7 +17,7 @@ opt.tabstop = 2
 opt.softtabstop = 2
 
 -- search options
-opt.hlsearch = true
+opt.hlsearch = false
 opt.incsearch = true
 opt.smartcase = true
 
