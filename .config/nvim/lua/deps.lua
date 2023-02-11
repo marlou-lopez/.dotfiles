@@ -24,6 +24,7 @@ vim.api.nvim_create_autocmd("BufWritePost", {
 
 return require("packer").startup(function(use)
 			use("wbthomason/packer.nvim")
+			use("nvim-tree/nvim-web-devicons")
 			use({
 					-- LSP Configuration & Plugins
 					"neovim/nvim-lspconfig",
@@ -80,16 +81,14 @@ return require("packer").startup(function(use)
 						require("toggleterm").setup()
 					end,
 			})
+			use('MunifTanjim/prettier.nvim')
 			use({
 					"jose-elias-alvarez/null-ls.nvim",
-					config = function()
-						require("null-ls").setup()
-					end,
 					requires = { "nvim-lua/plenary.nvim" },
 			})
 
 			use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
-			use { 'ThePrimeagen/harpoon', requires = 'nvim-lua/plenary.nvim'}
+			use { 'ThePrimeagen/harpoon', requires = 'nvim-lua/plenary.nvim' }
 			-- Add custom plugins to packer from ~/.config/nvim/lua/custom/plugins.lua
 			local has_plugins, plugins = pcall(require, "custom.plugins")
 			if has_plugins then
