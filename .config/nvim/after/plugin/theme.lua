@@ -1,7 +1,5 @@
-vim.cmd("colorscheme ayu-mirage")
+require('catppuccin').setup {
+ flavour = "mocha",
+}
 
--- vim.g.catppuccin_flavour = "mocha"
--- 
--- require("catppuccin").setup()
--- 
--- vim.cmd [[colorscheme catppuccin]]
+vim.cmd.colorscheme "catppuccin"

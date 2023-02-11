@@ -1,14 +1,14 @@
-require("deps")
+require('deps')
 
-vim.g.loaded = 1
-vim.g.loaded_netrwPlugin = 1
+require('modules.mappings')
+require('modules.options')
 
-vim.cmd [[
-runtime! lua/modules/options.lua
-runtime! lua/modules/util.lua
-runtime! lua/modules/mappings.lua
-]]
+local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
+vim.api.nvim_create_autocmd('TextYankPost', {
+  callback = function()
+    vim.highlight.on_yank()
+  end,
+  group = highlight_group,
+  pattern = '*',
+})
 
-vim.api.nvim_create_autocmd("TermOpen", { command = "startinsert", pattern = "*"})
--- autocmd FileType * setlocal textwidth=0
--- vim.api.nvim_create_autocmd("FileType", { command = [[setlocal textwidth=0]]})
