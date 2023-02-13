@@ -2,20 +2,25 @@ local Remap = require("modules.util")
 local nnoremap = Remap.nnoremap
 
 local ignored_list = {
-	"node_modules",
-	-- "^.git/",
+		"node_modules",
+		-- "^.git/",
 }
 
 require("telescope").setup({
-	defaults = {
-		file_ignore_patterns = ignored_list,
-		-- mappings = {
-		--   i = {
-		--     ['<C-u>'] = false,
-		--     ['<C-d>'] = false,
-		--   }
-		-- }
-	},
+		defaults = {
+				file_ignore_patterns = ignored_list,
+				-- mappings = {
+				--   i = {
+				--     ['<C-u>'] = false,
+				--     ['<C-d>'] = false,
+				--   }
+				-- }
+		},
+		pickers = {
+				find_files = {
+						find_command = { 'rg', '--files', '--hidden', '-g', '!.git' },
+				}
+		}
 })
 
 require("telescope").load_extension("fzf")
@@ -23,20 +28,20 @@ require("telescope").load_extension("fzf")
 nnoremap("<leader>?", function()
 	require("telescope.builtin").oldfiles()
 end, {
-	desc = "[?] Find recently opened files",
+		desc = "[?] Find recently opened files",
 })
 nnoremap("<leader><space>", function()
 	require("telescope.builtin").buffers()
 end, {
-	desc = "[ ] Find existing buffers",
+		desc = "[ ] Find existing buffers",
 })
 nnoremap("<leader>/", function()
 	require("telescope.builtin").current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
-		windblend = 10,
-		previewer = false,
+			windblend = 10,
+			previewer = false,
 	}))
 end, {
-	desc = "[/] Fuzzily search in current buffer",
+		desc = "[/] Fuzzily search in current buffer",
 })
 
 nnoremap("<leader>ff", function()

@@ -19,6 +19,7 @@ local on_attach = function(_, bufnr)
   nmap('gd', vim.lsp.buf.definition, '[G]oto [D]efinition')
   nmap('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
   nmap('gI', vim.lsp.buf.implementation, '[G]oto [I]mplementation')
+  nmap('sd', vim.diagnostic.open_float, '[S]how [D]iagnostics')
   nmap('<leader>D', vim.lsp.buf.type_definition, 'Type [D]efinition')
   nmap('<leader>ds', require('telescope.builtin').lsp_document_symbols, '[D]ocument [S]ymbols')
   nmap('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
@@ -46,7 +47,7 @@ local servers = {
     -- pyright = {},
     -- rust_analyzer = {},
     tsserver = {},
-    sumneko_lua = {
+    lua_ls = {
         Lua = {
             workspace = { checkThirdParty = false },
             telemetry = { enable = false },
