@@ -73,7 +73,8 @@ ZSH_THEME="robbyrussell"
 plugins=(
 			nvm
 			git
-			web-search
+			zsh-syntax-highlighting
+			zsh-autosuggestions
     )
 
 source $ZSH/oh-my-zsh.sh
