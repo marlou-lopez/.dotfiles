@@ -60,6 +60,7 @@ opt.scrolloff = 8
 opt.wrap = false
 
 -- misc
+opt.clipboard = "unnamedplus"
 opt.swapfile = false
 opt.backup = false
 opt.undofile = true
