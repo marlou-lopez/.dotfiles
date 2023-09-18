@@ -8,7 +8,7 @@ local options = {
     "json",
     "html",
     "css",
-    "markdown"
+    "markdown",
   },
 
   highlight = {

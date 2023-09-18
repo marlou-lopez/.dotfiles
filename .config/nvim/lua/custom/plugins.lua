@@ -1,5 +1,13 @@
 local plugins = {
   {
+    "iamcco/markdown-preview.nvim",
+    -- lazy = false,
+    event = "BufRead",
+    config = function()
+      vim.fn["mkdp#util#install"]()
+    end,
+  },
+  {
     "ThePrimeagen/harpoon"
   },
   {
@@ -20,6 +28,7 @@ local plugins = {
     "williamboman/mason.nvim",
     opts = {
       ensure_installed = {
+        "lua-language-server",
         "eslint_d",
         "eslint-lsp",
         "prettier",
