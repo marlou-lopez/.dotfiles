@@ -64,6 +64,19 @@ M.tmux_navigator = {
   }
 }
 
+M.rest = {
+  n = {
+    ["<leader>rr"] = {"<cmd>Rest run<cr>", "Run request under the cursor"},
+    ["<leader>rl"] = {"<cmd>Rest run last<cr>", "Re run latest request"},
+    ["<leader>rt"] = {
+      function ()
+        require("telescope").extensions.rest.select_env()
+      end,
+      "Load rest env variables"
+    },
+  }
+}
+
 -- M.oil = {
 --   n = {
 --     ["-"] = {"<cmd>Oil"}

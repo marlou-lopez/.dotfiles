@@ -9,6 +9,15 @@ local options = {
       "--line-number",
       "--column",
       "--smart-case",
+      "--hidden",
+
+      "--glob=!**/.git/*",
+      "--glob=!**/.idea/*",
+      "--glob=!**/.vscode/*",
+      "--glob=!**/build/*",
+      "--glob=!**/dist/*",
+      "--glob=!**/yarn.lock",
+      "--glob=!**/package-lock.json",
     },
     -- prompt_prefix = "   ",
     selection_caret = "  ",
@@ -48,8 +57,26 @@ local options = {
       n = { ["q"] = require("telescope.actions").close },
     },
   },
-
-  extensions_list = { "themes", "terms" },
+  pickers = {
+    find_files = {
+      hidden = true,
+      -- needed to exclude some files & dirs from general search
+      -- when not included or specified in .gitignore
+      find_command = {
+        "rg",
+        "--files",
+        "--hidden",
+        "--glob=!**/.git/*",
+        "--glob=!**/.idea/*",
+        "--glob=!**/.vscode/*",
+        "--glob=!**/build/*",
+        "--glob=!**/dist/*",
+        "--glob=!**/yarn.lock",
+        "--glob=!**/package-lock.json",
+      },
+    },
+  },
+  extensions_list = { "themes", "terms", "rest" },
 }
 
 return options

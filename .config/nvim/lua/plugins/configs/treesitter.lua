@@ -9,6 +9,8 @@ local options = {
     "html",
     "css",
     "markdown",
+    "http",
+    "xml"
   },
 
   highlight = {

@@ -1,31 +1,5 @@
 local plugins = {
   {
-    "rcarriga/nvim-dap-ui",
-    event = "VeryLazy",
-    dependencies = "mfussenegger/nvim-dap",
-    config = function ()
-      local dap = require("dap")
-      local dapui = require("dapui")
-      require("dapui").setup()
-      dap.listeners.after.event_initialized["dapui_config"] = function ()
-        dapui.open()
-      end
-      dap.listeners.before.event_terminated["dapui_config"] = function ()
-        dapui.close()
-      end
-      dap.listeners.before.event_exited["dapui_config"] = function ()
-        dapui.close()
-      end
-    end
-  },
-  {
-    "mfussenegger/nvim-dap",
-    config = function ()
-      require "custom.configs.dap"
-      require("core.utils").load_mappings("dap")
-    end
-  },
-  {
     "iamcco/markdown-preview.nvim",
     -- lazy = false,
     event = "BufRead",
@@ -34,14 +8,62 @@ local plugins = {
     end,
   },
   {
+    "folke/zen-mode.nvim",
+    event = "BufRead",
+    opts = {}
+  },
+  {
     "ThePrimeagen/harpoon"
   },
   {
-    "mhartington/formatter.nvim",
-    event = "VeryLazy",
+    "tpope/vim-dadbod",
+    dependencies = {
+      "kristijanhusak/vim-dadbod-ui",
+      "kristijanhusak/vim-dadbod-completion",
+    },
+    config = function()
+      require("custom.configs.dadbod").setup()
+    end,
+    cmd = {
+      "DBUIToggle", "DBUI", "DBUIAddConnection", "DBUIFindBuffer",
+    },
+  },
+  {
+    "vhyrro/luarocks.nvim",
+    priority = 1000,
+    config = true,
+  },
+  {
+    "rest-nvim/rest.nvim",
+    ft = "http",
+    dependencies = { "luarocks.nvim" },
+    config = function()
+      require("rest-nvim").setup()
+    end,
+  },
+  -- {
+  --   "mhartington/formatter.nvim",
+  --   event = "VeryLazy",
+  --   opts = function ()
+  --     return require("custom.configs.formatter")
+  --   end
+  -- },
+  {
+    'stevearc/conform.nvim',
+    event = "BufWritePre",
     opts = function ()
-      return require("custom.configs.formatter")
-    end
+      return require("custom.configs.conform")
+    end,
+    -- config = function ()
+    --   require("conform.formatters.eslint_d").cwd = require("conform.util").root_file({
+    --     ".eslint.js",
+    --     ".eslint.cjs",
+    --     ".eslint.yaml",
+    --     ".eslint.yml",
+    --     ".eslint.json",
+    --   })
+    --   require("conform.formatters.eslint_d").require_cwd = true
+    -- end
   },
   {
     "mfussenegger/nvim-lint",
@@ -62,7 +84,10 @@ local plugins = {
         "js-debug-adapter",
         "tailwindcss-language-server",
         "json-lsp",
-        "css-lsp"
+        "css-lsp",
+        "html-lsp",
+        "yq",
+        "jq",
       }
     }
   },
