@@ -77,10 +77,10 @@ M.rest = {
   }
 }
 
--- M.oil = {
---   n = {
---     ["-"] = {"<cmd>Oil"}
---   }
--- }
+M.oil = {
+  n = {
+    ["-"] = {"<cmd> Oil <CR>", "Open Oil"}
+  }
+}
 
 return M

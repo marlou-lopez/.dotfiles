@@ -1,7 +1,6 @@
 local plugins = {
   {
     "iamcco/markdown-preview.nvim",
-    -- lazy = false,
     event = "BufRead",
     config = function()
       vim.fn["mkdp#util#install"]()
@@ -41,29 +40,12 @@ local plugins = {
       require("rest-nvim").setup()
     end,
   },
-  -- {
-  --   "mhartington/formatter.nvim",
-  --   event = "VeryLazy",
-  --   opts = function ()
-  --     return require("custom.configs.formatter")
-  --   end
-  -- },
   {
     'stevearc/conform.nvim',
     event = "BufWritePre",
     opts = function ()
       return require("custom.configs.conform")
     end,
-    -- config = function ()
-    --   require("conform.formatters.eslint_d").cwd = require("conform.util").root_file({
-    --     ".eslint.js",
-    --     ".eslint.cjs",
-    --     ".eslint.yaml",
-    --     ".eslint.yml",
-    --     ".eslint.json",
-    --   })
-    --   require("conform.formatters.eslint_d").require_cwd = true
-    -- end
   },
   {
     "mfussenegger/nvim-lint",
@@ -109,6 +91,30 @@ local plugins = {
       default_file_explorer = false
     },
     dependencies = { "nvim-tree/nvim-web-devicons" }
+  },
+  {
+    "rcarriga/nvim-notify",
+    lazy = false,
+  },
+  {
+    "MunifTanjim/nui.nvim",
+    lazy = false,
+  },
+  -- lazy.nvim
+  {
+    "folke/noice.nvim",
+    event = "VeryLazy",
+    opts = {
+      -- add any options here
+    },
+    dependencies = {
+      -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+      "MunifTanjim/nui.nvim",
+      -- OPTIONAL:
+      --   `nvim-notify` is only needed, if you want to use the notification view.
+      --   If not available, we use `mini` as the fallback
+      "rcarriga/nvim-notify",
+      }
   }
 }
 
