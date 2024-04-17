@@ -99,6 +99,19 @@ local plugins = {
   {
     "sindrets/diffview.nvim",
     event = "BufRead"
+  },
+  {
+    "epwalsh/obsidian.nvim",
+    version = "*",  -- recommended, use latest release instead of latest commit
+    lazy = true,
+    cmd = {"ObsidianNew", "ObsidianToday"},
+    ft = "markdown",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+    opts = function ()
+      return require("custom.configs.obsidian")
+    end,
   }
 }
 

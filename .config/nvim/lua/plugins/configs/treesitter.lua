@@ -9,6 +9,7 @@ local options = {
     "html",
     "css",
     "markdown",
+    "markdown_inline",
     "http",
     "xml"
   },

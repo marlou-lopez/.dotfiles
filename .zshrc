@@ -12,4 +12,4 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 alias vim="nvim"
 alias vi="nvim"
-alias tmux="TERM=screen-256color-bce tmux"
+# alias tmux="TERM=screen-256color-bce tmux"
